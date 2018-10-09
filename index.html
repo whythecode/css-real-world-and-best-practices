@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS: Real World & Best Practices</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="main-header">
+        <h1>CSS: Real World & Best Practices</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>CSS</h2>
+
+            <article class="css-display">
+                <h3>display</h3>
+
+                <section>
+                    <h4>display: inline</h4>
+                    <div class="example-container">
+                        <div class="example inline">inline</div>
+                        <div class="example inline">inline</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4>display: inline-block</h4>
+                    <div class="example-container">
+                        <div class="example inline-block">inline-block</div>
+                        <div class="example inline-block">inline-block</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4>display: block</h4>
+                    <div class="example-container">
+                        <div class="example block">block</div>
+                        <div class="example block">block</div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="css-box-sizing">
+                <h3>box-sizing</h3>
+
+                <section>
+                    <h4>box-sizing: content-box</h4>
+                    <div class="example-container">
+                        <div class="example content-box">
+                            <div class="content">content-box</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4>box-sizing: border-box</h4>
+                    <div class="example-container">
+                        <div class="example border-box">
+                            <div class="content">border-box</div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="css-pseudo-elements">
+                <h3>Pseudo-elements</h3>
+
+                <section>
+                    <h4>Inline example</h4>
+                    <div class="example-container">
+                        <div class="example inline">
+                            <div class="content">Inline example</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4>Block example</h4>
+                    <div class="example-container">
+                        <div class="example block">
+                            <div class="content">Block example</div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="css-specificity">
+                <h3>Specificity</h3>
+
+                <ul>
+                    <li class="red">Text</li>
+                    <li>Text</li>
+                    <li>Text</li>
+                    <li>Text</li>
+                    <li class="red blue">Text</li>
+                    <li class="red blue" id="specificity-special-li">Text</li>
+                    <li>Text</li>
+                    <li>Text</li>
+                    <li class="red">Text</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Examples</h2>
+
+            <article class="checkbox">
+                <h3>Checkbox</h3>
+
+                <form>
+                    <fieldset class="custom-checkbox">
+                        <legend>Choose multiple options</legend>
+
+                        <input type="checkbox" value="1" id="checkbox-1" name="custom-checkbox">
+                        <label for="checkbox-1">Option 1</label>
+
+                        <input type="checkbox" value="2" id="checkbox-2" name="custom-checkbox">
+                        <label for="checkbox-2">Option 2</label>
+
+                        <input type="checkbox" value="3" id="checkbox-3" name="custom-checkbox">
+                        <label for="checkbox-3">Option 3</label>
+                    </fieldset>
+                </form>
+            </article>
+
+            <article class="radio">
+                <h3>Radio</h3>
+
+                <form>
+                    <fieldset class="custom-radio">
+                        <legend>Choose one option</legend>
+
+                        <input type="radio" value="1" id="radio-1" name="custom-radio">
+                        <label for="radio-1">Option 1</label>
+
+                        <input type="radio" value="2" id="radio-2" name="custom-radio">
+                        <label for="radio-2">Option 2</label>
+
+                        <input type="radio" value="3" id="radio-3" name="custom-radio">
+                        <label for="radio-3">Option 3</label>
+                    </fieldset>
+                </form>
+            </article>
+
+            <article class="same-height-columns">
+                <h3>Same-height columns</h3>
+
+                <section class="same-height-columns-body">
+                    <div class="column percent-width">
+                        <p>Percent width (30%)</p>
+                    </div>
+                    <div class="column fluid">
+                        <p>Fluid</p>
+                        <p>Very</p>
+                        <p>Long</p>
+                        <p>Content</p>
+                    </div>
+                    <div class="column fixed-width">
+                        <p>Fixed width (300px)</p>
+                    </div>
+                </section>
+            </article>
+
+            <article class="distribution">
+                <h3>Distribution</h3>
+
+                <section class="distribution-around">
+                    <h4>around</h4>
+
+                    <section class="distribution-body">
+                        <div>Item 1</div>
+                        <div>Item 2 with a lot more content than the others</div>
+                        <div>Item 3 somewhat bigger</div>
+                    </section>
+                </section>
+
+                <section class="distribution-between">
+                    <h4>between</h4>
+
+                    <section class="distribution-body">
+                        <div>Item 1</div>
+                        <div>Item 2 with a lot more content than the others</div>
+                        <div>Item 3 somewhat bigger</div>
+                    </section>
+                </section>
+
+                <section class="distribution-evenly">
+                    <h4>evenly</h4>
+
+                    <section class="distribution-body">
+                        <div>Item 1</div>
+                        <div>Item 2 with a lot more content than the others</div>
+                        <div>Item 3 somewhat bigger</div>
+                    </section>
+                </section>
+
+                <section class="distribution-multiline">
+                    <h4>multi-line (space-between)</h4>
+
+                    <section class="distribution-body">
+                        <div>Item 1</div>
+                        <div>Item 2 with a lot more content than the others</div>
+                        <div>Item 3 somewhat bigger</div>
+                        <div>Item</div>
+                        <div class="bigger">Bigger Item</div>
+                        <div>Item</div>
+                        <div>Item</div>
+                        <div class="bigger">Bigger Item</div>
+                        <div class="bigger">Bigger Item</div>
+                        <div>Item</div>
+                        <div class="bigger">Bigger Item</div>
+                        <div>Item</div>
+                    </section>
+                </section>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

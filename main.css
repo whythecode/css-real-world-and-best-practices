@@ -1,0 +1,381 @@
+
+/** region General */
+:root {
+    --h1-size: 2em;
+    --h2-size: 1.5em;
+    --h3-size: 1.17em;
+    --header-height: 60px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: var(--h1-size);
+}
+
+h2 {
+    position: sticky;
+    margin-top: 0;
+    background: white;
+    top: var(--header-height);
+    z-index: 5;
+    font-size: var(--h2-size);
+}
+
+h3 {
+    font-size: var(--h3-size);
+}
+
+section {
+    margin-bottom: 3em;
+}
+
+
+/** region Header */
+.main-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 20px;
+    margin-bottom: 20px;
+    z-index: 10;
+    background: #000;
+}
+
+.main-header h1 {
+    color: white;
+    margin: 0;
+}
+
+/** endregion Header */
+
+
+/** region Main */
+main {
+    padding: 0 20px;
+}
+
+main > section {
+    margin-bottom: 10em;
+}
+
+main > section > article {
+    min-height: 100vh;
+}
+
+form {
+    margin-bottom: 1em;
+}
+/** endregion Main */
+/** endregion General */
+
+
+/** region CSS */
+/** region CSS: display */
+.css-display {}
+
+.css-display .example-container {
+    background: green;
+}
+
+.css-display .example-container .example {
+    background: blue;
+    padding: 20px;
+    margin: 20px;
+    width: 25%;
+    color: white;
+}
+
+.css-display .example-container .example.inline {
+    display: inline;
+}
+
+.css-display .example-container .example.inline-block {
+    display: inline-block;
+}
+
+.css-display .example-container .example.block {
+    display: block;
+}
+/** endregion CSS: display */
+
+
+/** region CSS: box-sizing */
+.css-box-sizing {}
+
+.css-box-sizing .example-container {
+    width: 100px;
+    height: 100px;
+    background: black;
+}
+
+.css-box-sizing .example-container .example {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    opacity: 0.8;
+    border: solid 10px red;
+    background: yellow;
+}
+
+.css-box-sizing .example-container .example .content {
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.css-box-sizing .example-container .example.content-box {
+    box-sizing: content-box;
+}
+
+.css-box-sizing .example-container .example.border-box {
+    box-sizing: border-box;
+}
+/** endregion CSS: box-sizing */
+
+
+/** region CSS: Psedo-elements */
+.css-pseudo-elements {}
+
+.css-pseudo-elements .example-container {
+    padding: 20px;
+    background: green;
+}
+
+.css-pseudo-elements .example-container .example {
+    color: white;
+    background: blue;
+}
+
+.css-pseudo-elements .example-container .example .content::before {
+    content: '(before)';
+}
+
+.css-pseudo-elements .example-container .example .content::after {
+    content: '(after)';
+}
+
+.css-pseudo-elements .example-container .example.inline .content::before,
+.css-pseudo-elements .example-container .example.inline .content::after {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.css-pseudo-elements .example-container .example.block .content::before,
+.css-pseudo-elements .example-container .example.block .content::after {
+    display: block;
+    background: black;
+}
+/** endregion CSS: Psedo-elements */
+
+
+/** region CSS: Specificity */
+.css-specificity li.red.blue {
+    color: purple;
+}
+
+.css-specificity #specificity-special-li {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.css-specificity .red:first-child {
+    text-transform: uppercase;
+}
+
+.css-specificity li.red {
+    text-decoration: underline;
+}
+
+.css-specificity .red {
+    color: red;
+}
+
+.css-specificity li {
+    color: blue;
+}
+
+.css-specificity li {
+    color: black;
+}
+/** endregion CSS: Specificity */
+/** endregion CSS */
+
+
+/** region Examples */
+/** region Checkbox */
+.custom-checkbox input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-checkbox label {
+    position: relative;
+    padding-left: 20px;
+    margin-right: 10px;
+}
+
+.custom-checkbox label::before,
+.custom-checkbox label::after {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+}
+
+.custom-checkbox label::before {
+    content: '';
+    top: 3px;
+    height: 10px;
+    width: 10px;
+    border: solid 1px black;
+}
+
+.custom-checkbox label::after {
+    top: 2px;
+    height: 7px;
+    width: 12px;
+    transform: rotate(-45deg);
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.custom-checkbox input:checked + label::after {
+    content: '';
+}
+
+.custom-checkbox input:focus + label::before {
+    outline: blue auto 2px;
+    outline-offset: 4px;
+}
+/** endregion Checkbox */
+
+
+/** region Radio */
+.custom-radio input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-radio label {
+    position: relative;
+    padding-left: 20px;
+    margin-right: 10px;
+}
+
+.custom-radio label::before,
+.custom-radio label::after {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    border-radius: 50%;
+}
+
+.custom-radio label::before {
+    content: '';
+    top: 3px;
+    height: 10px;
+    width: 10px;
+    border: solid 1px black;
+}
+
+.custom-radio label::after {
+    top: 6px;
+    left: 3px;
+    height: 6px;
+    width: 6px;
+    background: #000;
+}
+
+.custom-radio input:checked + label::after {
+    content: '';
+}
+
+.custom-radio input:focus + label::before {
+    outline: blue auto 2px;
+    outline-offset: 4px;
+}
+/** endregion Radio */
+
+
+/** region Same-height columns */
+.same-height-columns-body {
+    display: flex;
+}
+.same-height-columns-body .column {
+    flex: 0;
+    background: lightyellow;
+}
+.same-height-columns-body .column.percent-width {
+    flex-basis: 30%;
+    background: lightgreen;
+}
+.same-height-columns-body .column.fluid {
+    flex: 1;
+    background: lightyellow;
+}
+.same-height-columns-body .column.fixed-width {
+    flex-basis: 300px;
+    background: lightblue;
+}
+/** endregion Same-height columns */
+
+
+/** region Distribution */
+.distribution .distribution-body {
+    display: flex;
+}
+
+.distribution .distribution-body > div {
+    padding: 5px;
+    border: solid 1px black;
+}
+
+.distribution .distribution-body > div.bigger {
+    padding: 50px;
+    border: solid 1px black;
+}
+
+.distribution .distribution-around .distribution-body {
+    justify-content: space-around;
+}
+
+.distribution .distribution-between .distribution-body {
+    justify-content: space-between;
+}
+
+.distribution .distribution-evenly .distribution-body {
+    justify-content: space-evenly;
+}
+
+.distribution .distribution-multiline .distribution-body {
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.distribution .distribution-multiline .distribution-body > div {
+    min-width: 100px;
+    margin-bottom: 20px;
+}
+
+.distribution .distribution-multiline .distribution-body > div.bigger {
+    width: 25%;
+}
+/** endregion Distribution */
+
+/** endregion Examples */
