@@ -5,6 +5,7 @@
     --h2-size: 1.5em;
     --h3-size: 1.17em;
     --header-height: 60px;
+    --content-separator-color: #e5e5e5;
 }
 
 * {
@@ -179,13 +180,17 @@ form {
 
 
 /** region CSS: Specificity */
-.css-specificity li.red.blue {
-    color: purple;
-}
-
 .css-specificity #specificity-special-li {
     font-weight: bold;
     font-size: 20px;
+}
+
+.css-specificity .red:not(.blue) {
+    font-size: 30px;
+}
+
+.css-specificity li.red.blue {
+    color: purple;
 }
 
 .css-specificity .red:first-child {
@@ -379,3 +384,33 @@ form {
 /** endregion Distribution */
 
 /** endregion Examples */
+
+/** region AR Example */
+.ar-container .product-special-list {}
+
+.ar-container .product-special-list .product {
+    display: flex;
+    border-bottom: solid 1px var(--content-separator-color);
+    padding: 15px 0;
+    justify-content: space-between;
+}
+
+.ar-container .product-special-list .product:first-child {
+    border-top: solid 1px var(--content-separator-color);
+}
+
+.ar-container .product-special-list .product .product-name {
+    flex-basis: 50px;
+}
+
+.ar-container .product-special-list .product .product-details {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.ar-container .product-special-list .product .accordion-actions {
+    flex-basis: 50px;
+    text-align: right;
+}
+
+/** endregion AR Example */

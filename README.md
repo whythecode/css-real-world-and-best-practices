@@ -6,6 +6,7 @@
 
 ## Links
 - https://css-tricks.com/can-get-pretty-far-making-slider-just-html-css/
+- https://flexboxfroggy.com/
 
 ### Specificity
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
